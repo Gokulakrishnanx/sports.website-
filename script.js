@@ -169,4 +169,20 @@ exploreProgramsBtn.addEventListener('click', () => {
     document.getElementById('programs').scrollIntoView({
         behavior: 'smooth'
     });
-}); 
+});
+
+// Update timestamp in footer
+function updateTimestamp() {
+    const timestampElement = document.getElementById('timestamp');
+    const now = new Date();
+    const options = { 
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+    };
+    timestampElement.textContent = now.toLocaleTimeString('en-US', options);
+}
+
+// Update timestamp every second
+setInterval(updateTimestamp, 1000);
+updateTimestamp(); // Initial call 

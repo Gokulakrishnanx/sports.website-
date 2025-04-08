@@ -987,14 +987,11 @@ body {
 }
 
 @keyframes float {
-    0% {
-        transform: none;
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
     }
     50% {
-        transform: none;
-    }
-    100% {
-        transform: none;
+        transform: translateY(-20px) rotate(5deg);
     }
 }
 
@@ -1221,4 +1218,109 @@ body {
         right: 15px;
         top: 15px;
     }
+}
+
+.vector-art {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.vector-element {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    opacity: 0.3;
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+    animation: float 6s ease-in-out infinite;
+}
+
+.ball {
+    top: 15%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.runner {
+    top: 40%;
+    right: 15%;
+    animation-delay: 2s;
+}
+
+.trophy {
+    bottom: 20%;
+    left: 20%;
+    animation-delay: 4s;
+}
+
+.whistle {
+    top: 25%;
+    right: 25%;
+    animation-delay: 1s;
+    transform: rotate(-15deg);
+}
+
+.medal {
+    bottom: 35%;
+    right: 10%;
+    animation-delay: 3s;
+}
+
+.stopwatch {
+    top: 60%;
+    left: 15%;
+    animation-delay: 5s;
+}
+
+@media (max-width: 768px) {
+    .vector-element {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .ball {
+        top: 10%;
+        left: 5%;
+    }
+    
+    .runner {
+        top: 30%;
+        right: 10%;
+    }
+    
+    .trophy {
+        bottom: 15%;
+        left: 15%;
+    }
+
+    .whistle {
+        top: 20%;
+        right: 20%;
+    }
+
+    .medal {
+        bottom: 25%;
+        right: 8%;
+    }
+
+    .stopwatch {
+        top: 50%;
+        left: 12%;
+    }
+}
+
+/* Enhanced hover effects for vector elements */
+.vector-element {
+    transition: all 0.5s ease;
+}
+
+.vector-element:hover {
+    opacity: 0.6;
+    filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.8));
+    transform: scale(1.1) rotate(5deg);
 } 
